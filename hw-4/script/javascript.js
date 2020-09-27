@@ -10,7 +10,7 @@ let purse = {
   deleteFrom(fieldName) {
     delete this[fieldName];
   },
-  Inside() {
+  inside() {
     for (let insidePurse in this) {
       if (typeof this[insidePurse] == "string") {
         console.log(insidePurse + " " + this[insidePurse]);
@@ -22,6 +22,6 @@ let purse = {
 purse.deleteFrom("phone"); // удаляем свойство
 purse.addTo("phone", "samsung"); // добавлем свойство
 
-purse.Inside(); // выводим содержимое
+purse.inside(); // выводим содержимое
 
 console.log("Дополнительное задание");

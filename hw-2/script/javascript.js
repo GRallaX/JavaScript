@@ -9,7 +9,7 @@ console.log("Первые буквы из слов строки: " + letters);
 console.log("Массив в строку: " + letters.join(""));
 
 console.log("Дополнительное задание 1");
-function OneFormalParameter(b) {
+function oneFormalParameter(b) {
   if (typeof b == "number") {
     var today = new Date();
     var date = String(today.getDate()).padStart(2, "0");
@@ -36,7 +36,7 @@ function OneFormalParameter(b) {
     return "Неверный тип данных";
   }
 }
-console.log("Если параметр функции число: " + OneFormalParameter(3));
+console.log("Если параметр функции число: " + oneFormalParameter(3));
 console.log(
   "Если параметр функции что-то другое (например, строка): " +
     OneFormalParameter("string")

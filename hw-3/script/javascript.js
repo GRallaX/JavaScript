@@ -8,20 +8,18 @@ function returArguments() {
 returArguments(10, false, "google");
 
 console.log("Дополнительное задание 1");
-function userInfo(user) {
-  if (user.registered == true) {
-    console.log("Дата регистрации: " + user.data);
+function userInfo() {
+  if (this.registered == true) {
+    console.log("Дата регистрации: " + this.data);
   } else {
-    console.log("Незарегистрированный пользователь: " + user.name);
+    console.log("Незарегистрированный пользователь: " + this.name);
   }
 }
 let user1 = {
   name: "Alex",
   registered: true,
   data: "03.11.1911",
-  getinfo() {
-    userInfo(this);
-  },
+  getinfo: userInfo,
 };
 user1.getinfo();
 
@@ -29,9 +27,7 @@ let user2 = {
   name: "John",
   registered: false,
   data: "",
-  getinfo() {
-    userInfo(this);
-  },
+  getinfo: userInfo,
 };
 user2.getinfo();
 

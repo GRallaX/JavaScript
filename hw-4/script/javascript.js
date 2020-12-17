@@ -127,3 +127,40 @@ for (let pupil of studentArr) {
 }
 
 console.log(Student.listOfStudents);
+
+console.log("Задание: 4.2");
+
+class CustomString {
+  reverse(str) {
+    return str.split("").reverse().join("");
+  }
+  ucFirst(str) {
+    return (
+      str[0].split("").toString().toUpperCase() +
+      str
+        .split("")
+        .splice(1, str.length - 1)
+        .join("")
+    );
+  }
+  ucWords(str) {
+    let arrStr = str.split(" ");
+    let resStr = [];
+    for (let ucFirst of arrStr) {
+      resStr.push(
+        ucFirst[0].split("").toString().toUpperCase() +
+          ucFirst
+            .split("")
+            .splice(1, str.length - 1)
+            .join("")
+      );
+    }
+    return resStr.join(" ");
+  }
+}
+
+const myString = new CustomString();
+
+console.log(myString.reverse("qwerty"));
+console.log(myString.ucFirst("qwerty"));
+console.log(myString.ucWords("qwerty qwerty qwerty"));

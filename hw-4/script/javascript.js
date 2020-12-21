@@ -8,10 +8,10 @@ class Student {
     this.surname = enrollee.surname;
     this.ratingPoint = enrollee.ratingPoint;
     this.schoolPoint = enrollee.schoolPoint;
-    this.isSelfPayment = false;
+    this.isSelfPayment = true;
     if (enrollee.ratingPoint >= 800) {
       if (Student.listOfStudents.length < 5) {
-        this.isSelfPayment = true;
+        this.isSelfPayment = false;
       } else if (Student.listOfStudents.length >= 5) {
         let sortedStudents = Student.listOfStudents.sort(function (min, max) {
           if (min.ratingPoint == max.ratingPoint) {
@@ -21,12 +21,12 @@ class Student {
           }
         });
         if (enrollee.ratingPoint > sortedStudents[4].ratingPoint) {
-          this.isSelfPayment = true;
-          sortedStudents[4].isSelfPayment = false;
+          this.isSelfPayment = false;
+          sortedStudents[4].isSelfPayment = true;
         } else if (enrollee.ratingPoint == sortedStudents[4].ratingPoint) {
           if (enrollee.schoolPoint > sortedStudents[4].schoolPoint) {
-            this.isSelfPayment = true;
-            sortedStudents[4].isSelfPayment = false;
+            this.isSelfPayment = false;
+            sortedStudents[4].isSelfPayment = true;
           }
         }
       }

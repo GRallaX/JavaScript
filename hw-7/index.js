@@ -62,7 +62,6 @@ console.log(sortCandidatesArr("qwe"));
 console.log("Задание: 7.4");
 const getEyeColorMap = () => {
   return condidateArr.reduce((eyeMap, cand, candIndex) => {
-    debugger;
     if (cand.eyeColor in eyeMap) {
       eyeMap[cand.eyeColor].push(new Candidate(condidateArr[candIndex]));
     } else {

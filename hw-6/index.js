@@ -135,18 +135,18 @@ console.log(getCondidatesByGender("male"));
 console.log("Задание: 6.10");
 
 const customReduce = function (callback, accum) {
-  let accumulator = accum === undefined ? 0 : accum;
   for (let index in this) {
-    // if (accumulator === accum) {
-    //   continue;
-    // }
-    accumulator = callback(accumulator, this[index], index, this);
+    if (!accum) {
+      accum = this[0];
+      continue;
+    }
+    accum = callback(accum, this[index], index, this);
   }
-  return accumulator;
+  return accum;
 };
 
 const customJoin = function (separator) {
-  if (separator === undefined) {
+  if (!separator) {
     separator = ",";
   }
   let str = "";

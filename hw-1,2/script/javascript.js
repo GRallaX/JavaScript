@@ -195,20 +195,3 @@ console.log(binarConverter([1, 0, 0, 1, 0]));
 console.log(binarConverter([1, 0, 1, 0, 1]));
 console.log(binarConverter([1, 1, 1, 0, 0, 1]));
 console.log(binarConverter([1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1]));
-
-const busStations = [
-  [10, 0],
-  [3, 5],
-  [5, 7],
-  [1, 5],
-];
-
-function calculatePeopleLeft(stations) {
-  const callback = (acc, item) => {
-    acc += item[0] - item[1];
-    return acc;
-  };
-  const peopleLeft = stations.reduce(callback, 0);
-  return peopleLeft;
-}
-calculatePeopleLeft(busStations);
